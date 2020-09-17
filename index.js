@@ -37,7 +37,7 @@ function promptUser() {
             type: "checkbox",
             name: "license",
             message: "Select your license",
-            choice: [
+            choices: [
                 "GNU GPLv3",
                 "MIT",
                 "ISC",
@@ -62,3 +62,18 @@ function promptUser() {
     ])
 }
 
+// Makes sure we get the user input before it tries to generate the Readme
+async function startProgram() {
+    try {    
+        const answer = await promptUser();
+        const readMe = generateMarkdown(answer);
+    
+        await writeFileAsync("README.md", readMe);
+        console.log("It works!");
+    } catch (err) {
+        console.log(err);
+    }
+
+}
+
+startProgram();
