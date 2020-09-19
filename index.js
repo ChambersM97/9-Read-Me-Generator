@@ -10,7 +10,7 @@ function promptUser() {
     return inquirer.prompt ([
         {
             type: "input",
-            name: "name",
+            name: "title",
             message: "What is the title of your project?"
         },
         {
@@ -27,11 +27,6 @@ function promptUser() {
             type: "input",
             name: "usage",
             message: "Enter usage here."
-        },
-        {
-            type: "input",
-            name: "table of contents",
-            message: "Enter table of contents here."
         },
         {
             type: "checkbox",
@@ -51,15 +46,25 @@ function promptUser() {
         },
         {
             type: "input",
-            name: "Tests",
-            message: "Test enter here"
-        },
-        {
-            type: "input",
             name: "questions",
             message: "Enter questions here"
         }
     ])
+}
+//Our template literal that will hold the values that are put in from the prompts
+function generateMarkdown (response) {
+    return `
+# ${response.title}
+
+# Table of Contents
+
+- [Description](#description)
+- [Installation](#installation)
+- [Usage](#usage)
+- [license](#license)
+- [contributing](#contributing)
+    `
+
 }
 
 // Makes sure we get the user input before it tries to generate the Readme
