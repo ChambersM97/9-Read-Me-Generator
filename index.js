@@ -9,6 +9,11 @@ const writeFileAsync = util.promisify(fs.writeFile);
 function promptUser() {
     return inquirer.prompt ([
         {
+            type:"input",
+            name: "Githubusername",
+            message: "What is your Github username?:
+        },
+        {
             type: "input",
             name: "title",
             message: "What is the title of your project?"
@@ -46,15 +51,26 @@ function promptUser() {
         },
         {
             type: "input",
-            name: "Tests",
-            message: "Test enter here"
-        },
-        {
-            type: "input",
             name: "questions",
             message: "Enter questions here"
         }
     ])
+}
+//Our template literal that will hold the values that are put in from the prompts
+function generateMarkdown (response) {
+    return `
+# ${response.title}
+
+# Table of Contents
+
+- [GitHub Username](#Githubusername)
+- [Description](#description)
+- [Installation](#installation)
+- [Usage](#usage)
+- [license](#license)
+- [contributing](#contributing)
+    `
+
 }
 
 //Makes the template for the readeMe
