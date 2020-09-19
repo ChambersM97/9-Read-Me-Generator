@@ -10,7 +10,7 @@ function promptUser() {
     return inquirer.prompt ([
         {
             type: "input",
-            name: "name",
+            name: "title",
             message: "What is the title of your project?"
         },
         {
@@ -27,11 +27,6 @@ function promptUser() {
             type: "input",
             name: "usage",
             message: "Enter usage here."
-        },
-        {
-            type: "input",
-            name: "table of contents",
-            message: "Enter table of contents here."
         },
         {
             type: "checkbox",
@@ -62,11 +57,18 @@ function promptUser() {
     ])
 }
 
+//Makes the template for the readeMe
+function generateReadme(answer) {
+    return `
+    # ${answer.title}
+    `
+}
+
 // Makes sure we get the user input before it tries to generate the Readme
 async function startProgram() {
     try {    
         const answer = await promptUser();
-        const readMe = generateMarkdown(answer);
+        const readMe = generateReadme(answer);
     
         await writeFileAsync("README.md", readMe);
         console.log("It works!");
