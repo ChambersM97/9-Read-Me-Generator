@@ -9,6 +9,11 @@ const writeFileAsync = util.promisify(fs.writeFile);
 function promptUser() {
     return inquirer.prompt ([
         {
+            type:"input",
+            name: "Githubusername",
+            message: "What is your Github username?:
+        },
+        {
             type: "input",
             name: "title",
             message: "What is the title of your project?"
@@ -58,6 +63,7 @@ function generateMarkdown (response) {
 
 # Table of Contents
 
+- [GitHub Username](#Githubusername)
 - [Description](#description)
 - [Installation](#installation)
 - [Usage](#usage)
