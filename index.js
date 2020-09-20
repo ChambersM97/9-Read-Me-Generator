@@ -26,7 +26,8 @@ function promptUser() {
         {
             type: "input",
             name: "installation",
-            message: "Enter installation here."
+            message: "What command should be run to download independencies?",
+            default: "npm intall"
         },
         {
             type: "input",
