@@ -77,6 +77,18 @@ function generateReadme (answer) {
 - [Contributing](#contributing)
 - [Tests](#tests)
 - [Questions](#questions)
+
+## Description:
+    ${answer.description}
+## Installation:
+    ${answer.installation}
+## Usage:
+    ${answer.usage}
+## License:
+    ${answer.contributing}
+## Questions:
+    <h1> You can check out my other projects at ${answer.username}, or
+    contact me at ${answer.email} </h1>
     `
 
 }
