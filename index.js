@@ -9,11 +9,6 @@ const writeFileAsync = util.promisify(fs.writeFile);
 function promptUser() {
     return inquirer.prompt ([
         {
-            type:"input",
-            name: "Githubusername",
-            message: "What is your Github username?:
-        },
-        {
             type: "input",
             name: "title",
             message: "What is the title of your project?"
@@ -31,7 +26,12 @@ function promptUser() {
         {
             type: "input",
             name: "usage",
-            message: "Enter usage here."
+            message: "What does this application do?"
+        },
+        {
+            type: "input",
+            name: "contributing",
+            message: "Listed who all contributed to this project"
         },
         {
             type: "checkbox",
@@ -46,38 +46,39 @@ function promptUser() {
         },
         {
             type: "input",
-            name: "contributing",
-            message: "Listed who all contributed to this project"
+            name: "username",
+            message: "What is your Github username?",
+        },
+        {
+            type: "input",
+            name: "email",
+            message: "What is your email address?"
         },
         {
             type: "input",
             name: "questions",
             message: "Enter questions here"
-        }
+        },
+
     ])
 }
 //Our template literal that will hold the values that are put in from the prompts
-function generateMarkdown (response) {
+function generateReadme (answer) {
     return `
-# ${response.title}
+# ${answer.title}
 
 # Table of Contents
 
-- [GitHub Username](#Githubusername)
+
 - [Description](#description)
 - [Installation](#installation)
 - [Usage](#usage)
-- [license](#license)
-- [contributing](#contributing)
+- [License](#license)
+- [Contributing](#contributing)
+- [Tests](#tests)
+- [Questions](#questions)
     `
 
-}
-
-//Makes the template for the readeMe
-function generateReadme(answer) {
-    return `
-    # ${answer.title}
-    `
 }
 
 // Makes sure we get the user input before it tries to generate the Readme
