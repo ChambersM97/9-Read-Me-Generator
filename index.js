@@ -22,7 +22,7 @@ function promptUser() {
             type: "input",
             name: "installation",
             message: "What command should be run to download independencies?",
-            default: "npm intall"
+            default: "npm install"
         },
         {
             type: "input",
@@ -81,16 +81,28 @@ function generateReadme (answer) {
 
 ## Description:
     ${answer.description}
+
 ## Installation:
     ${answer.installation}
+
 ## Usage:
     ${answer.usage}
+
 ## License:
+    ${answer.license}
+
+## Contributing:
     ${answer.contributing}
+
+## Tests:
+- ![Password-Generator-img]
+- ![Password-Generator-gif]
+
 ## Questions:
-    <h1> You can check out my other projects at ${answer.username}, or
-    contact me at ${answer.email} </h1>
-    `
+GitHub: [${answer.username}](https://github.com/${answer.username})
+Email: Contact me here ${answer.email} for any other questions you might have!
+
+ `
 
 }
 
