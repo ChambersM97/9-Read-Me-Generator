@@ -27,7 +27,7 @@ function promptUser() {
         {
             type: "input",
             name: "usage",
-            message: "What does this application do?"
+            message: "How do you run this project?"
         },
         {
             type: "input",
@@ -54,19 +54,15 @@ function promptUser() {
             type: "input",
             name: "email",
             message: "What is your email address?"
-        },
-        {
-            type: "input",
-            name: "questions",
-            message: "Enter questions here"
-        },
-
+        }
     ])
 }
 //Our template literal that will hold the values that are put in from the prompts
 function generateReadme (answer) {
     return `
 # ${answer.title}
+
+![GitHub license](https://img.shields.io/badge/Made%20by-%40ChambersM97-orange)
 
 # Table of Contents
 
@@ -80,27 +76,29 @@ function generateReadme (answer) {
 - [Questions](#questions)
 
 ## Description:
+    This area is designed for leaving a report of what the project is and it's purpose.
     ${answer.description}
 
 ## Installation:
+    These are the necessary steps to follow/files to download that you need in order to run the application.
     ${answer.installation}
 
 ## Usage:
     ${answer.usage}
 
 ## License:
-    ${answer.license}
+[![License](https://img.shields.io/badge/License-${answer.license}%202.0-blue.svg)](https://opensource.org/licenses/${answer.license})
 
 ## Contributing:
     ${answer.contributing}
 
 ## Tests:
-- ![Password-Generator-img]
-- ![Password-Generator-gif]
+
+![Password-Generator-gif](readmeGenerator.gif)
 
 ## Questions:
-GitHub: [${answer.username}](https://github.com/${answer.username})
-Email: Contact me here ${answer.email} for any other questions you might have!
+- GitHub: [${answer.username}](https://github.com/${answer.username})
+- Email: Contact me @ ${answer.email} for any other questions you might have!
 
  `
 
