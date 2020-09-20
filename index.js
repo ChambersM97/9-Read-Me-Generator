@@ -95,6 +95,7 @@ function generateReadme (answer) {
 ## Tests:
 
 ![Password-Generator-gif](readmeGenerator.gif)
+![Password-Generator_img](readmepic.PNG)
 
 ## Questions:
 - GitHub: [${answer.username}](https://github.com/${answer.username})

@@ -32,8 +32,10 @@
     Chambers Mansour
 
 ## Tests:
-
 ![Password-Generator-gif](readmeGenerator.gif)
+
+
+![Password-Generator_img](readmepic.PNG)
 
 ## Questions:
 - GitHub: [ChambersM97](https://github.com/ChambersM97)
